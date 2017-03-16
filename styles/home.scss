@@ -1,0 +1,395 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+$main: 'Work Sans', sans-serif;
+$title: 'Billabong', Helvetica;
+$light: lighter;
+
+/* COLORS */
+$beige:#FAF9F5;
+$navy: #254E70;
+$teal: #267BA5;
+$red: #C33C54;
+$green: #3DB260;
+$grey: lightgrey;
+$lightblue: #6BEDFF;
+
+/*SPACING*/
+$standard: 12px;
+
+/* SHADOWING */
+$all: 0 0 5px $grey;
+$lower: 1px 2.5px 1px #DDDBD7;
+
+/*Housekeeping/ OVERRIDDING SCSS*/
+body {
+  background-color: #FBF9F8;
+  font-family: $main;
+}
+
+html a{
+  cursor: pointer;
+  color: $teal;
+
+  &:hover {
+    color: #4AA6B2;
+  }
+}
+
+figcaption {
+  padding: 5px;
+}
+
+hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $grey;
+    margin: 1em 0;
+    padding: 0; 
+    width: 100%;
+}
+
+.long-divider {
+  border-top:2px solid $grey;
+  width: 815px;
+  margin-left: -155px;
+}
+
+Button {
+  box-shadow: $all;
+  background-color: $navy !important;
+  color: white !important;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+/*Nav*/
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: $lower;
+    height: 55px;
+
+    li {
+      float: left;
+    }
+
+    a {
+      color: #3B9D86;
+    }
+
+    .nav-item {
+      display: block;
+      text-align: center;
+      padding: 6px 16px;
+      text-decoration: none;
+    }
+
+    #cart {
+    width: 100px;
+    float: right; 
+    padding: 10px;
+  }
+}
+
+
+/* SECTIONS FOR COMPONENTS */
+.section-container {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding-left: $standard;
+    padding-right: $standard;
+
+    .section-title {
+      color: $teal;
+      font-family: $main;
+      font-weight: 100;
+      text-align: left;
+      padding: 0 30px 5px 110px;
+      float: left;
+      clear: both;
+      font-size: 20px;
+    }
+
+    .section-content {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 670px;
+      float: right;
+      margin-right: 90px;
+
+      p { padding-bottom: 15px; }
+
+      img {
+        margin-top: -8px;
+        padding-right: 4px;
+      }
+    }
+}
+
+
+/*/*STORE - HEADER */
+.store-container {
+  margin: 0 auto;
+  max-width: 300px;
+
+  .store-info {
+    min-height: 220px;
+    background-color: white;
+    box-shadow: $all;
+  }
+    .store-title {
+      color: $teal;
+      font-family: $title;
+      font-weight: 100;
+      font-size: 70px;
+      text-align: center;
+    }
+      .store-image {
+        width: 230px;
+        margin-left: 45px;
+    }
+}
+
+
+/* SELLER SECTION */
+.seller-container {
+    margin: 0 auto;
+    font-family: $main;
+    font-weight: $light;
+    text-align: center;
+    float: left;
+    padding-left: 230px;
+}
+
+.intro-container {
+  display: flex;
+  box-shadow: $all;
+  height: 220px;
+  margin: 5px 100px;
+
+  div {
+    flex: 1;
+    text-align: center;
+    background-color: white;
+    max-height: 220px;
+    font-weight: $light;
+
+    #about-text {
+      width: 230px;
+      margin: 0 auto;
+    }
+  }
+
+    .seller-title {
+      color: $teal;
+      font-family: $title;
+      font-weight: 100;
+      font-size: 45px;
+      margin-bottom: 1px;
+    }
+}
+
+/*PRODUCTS*/
+.gallery {
+    width: 90%;
+    margin: 0 auto;
+    
+    .products-header {
+      text-align: center;
+      padding: 25px;
+      color: $navy;
+      padding-bottom: -20px;
+
+      .item-toolbar {
+        height: 57px;
+        width: 87%;
+        margin: 0 auto;
+      }
+
+      .search-products {
+          width: 35%;
+          float: left;
+          border-radius: 20px;
+          box-shadow: 0 0 5px lightgrey;
+          margin-top: 50px;
+          height: 30px;
+          font-size: 15px;
+          padding-top: 5px;
+        }
+
+        #sort-by {
+          width: 35%;
+          float: right;
+          padding-top: 1px;
+        }
+    }
+
+    .products {
+      padding: 0;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: left;
+      justify-content: center;
+
+      img {
+        margin: 15px;
+        width: 185px;
+        height: 280px;
+        box-shadow: $all;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+  }
+
+    .more-products {
+      display: none;
+    }
+}
+
+#see-more-btn {
+  padding: 20px;
+  text-align: center; 
+}
+
+/* VERIFICATION /REVIEWS*/
+.verified-purchase {
+  float: right;
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.caption-right {
+  float: right;
+  font-weight: 500;
+  padding: 2px;
+}
+
+#silk-road {
+        float: left;
+        padding: 7px;
+        width: 180px;
+      }
+
+/*MODAL*/
+.modal-body {
+  display: flex;
+  box-shadow: $all;
+  font-weight: $light;
+
+  .modal-text {
+    padding-left: 66px;
+    padding-right: 60px;
+    text-align: center;
+  }
+
+  .qty-picker {
+    margin-left: 30px;
+    margin-right: 1px;
+  }
+
+  div {
+    flex: 1;
+    background-color: white;
+  }
+}
+
+/*INCREMENTER*/
+
+.product-quantity {
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-weight: 400;
+    text-align: center;
+    font-size: 2rem;
+    padding: 0 1rem;
+    border-radius: 10px;
+    margin-left: 75px;
+
+    button {
+      width: 70px;
+      border-radius: 5px;
+      float: left;
+    }
+
+    #counter {
+      float: left;
+      padding: 5px;
+    } 
+
+    #controls {
+      margin: 0 auto;
+      margin: 30px 10px 0 -40px;
+    }
+
+    .quantity {
+      width: 80%;
+      padding: 10px;
+    }
+}
+
+.add-cart-btn {
+  width: 220px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+#approval { 
+  font-size: 12px;
+  width: 95px;
+  background-color: white;
+  border: 1px solid $grey;
+  border-radius: 5px;
+}
+
+#approval-rating {
+  font-size: 12px;
+}
+
+.rating {
+  padding-bottom: 10px;
+}
+
+@media (max-width: 1070px) {
+
+/* CSS styles for viewports 1000px and under */  
+  .section-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 580px;
+    margin-left: 310px;
+    display: block;
+
+    .section-content {
+      margin-top: 20px;
+      width: 120%;
+      float: right;
+      margin: 0 auto;
+    }
+
+    .long-divider {
+      width: 660px;
+      margin: 0;
+    }
+
+    .section-title {
+      color: #23A4AE;
+      font-family: "Work Sans", sans-serif;
+      font-weight: 100;
+      clear: both;
+      font-size: 25px;
+      margin-left:40px;
+    }
+  }
+}  
