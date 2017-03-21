@@ -1,70 +1,5 @@
-/* FONT */
-@import url('https://fonts.googleapis.com/css?family=Work+Sans');
-$main: 'Work Sans', sans-serif;
-$title: 'Billabong', Helvetica;
-$light: lighter;
-
-/* COLORS */
-$beige:#FAF9F5;
-$navy: #254E70;
-$teal: #267BA5;
-$red: #C33C54;
-$green: #3DB260;
-$grey: lightgrey;
-$lightblue: #6BEDFF;
-
-/*SPACING*/
-$standard: 12px;
-
-/* SHADOWING */
-$all: 0 0 5px $grey;
-$lower: 1px 2.5px 1px #DDDBD7;
-
-/*Housekeeping/ OVERRIDDING SCSS*/
-body {
-  background-color: #FBF9F8;
-  font-family: $main;
-}
-
-html a{
-  cursor: pointer;
-  color: $teal;
-
-  &:hover {
-    color: #4AA6B2;
-  }
-}
-
-figcaption {
-  padding: 5px;
-}
-
-hr{
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid $grey;
-    margin: 1em 0;
-    padding: 0; 
-    width: 100%;
-}
-
-.long-divider {
-  border-top:2px solid $grey;
-  width: 815px;
-  margin-left: -155px;
-}
-
-Button {
-  box-shadow: $all;
-  background-color: $navy !important;
-  color: white !important;
-  border-radius: 10px;
-  opacity: 0.9;
-}
-
 /*Nav*/
-.nav {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -88,10 +23,19 @@ Button {
       text-decoration: none;
     }
 
-    #cart {
+  .nav-items {
     width: 100px;
-    float: right; 
-    padding: 10px;
+    margin-top: -7px;
+  }
+
+  .nav-btn{
+    list-style: none;
+    display: inline;
+  }
+
+  #cart {
+    margin-left: 270px;
+    margin-top: -4px;
   }
 }
 
@@ -169,6 +113,7 @@ Button {
   display: flex;
   box-shadow: $all;
   height: 220px;
+  overflow: hidden;
   margin: 5px 100px;
 
   div {
@@ -206,25 +151,44 @@ Button {
 
       .item-toolbar {
         height: 57px;
-        width: 87%;
+        width: 90%;
         margin: 0 auto;
       }
 
       .search-products {
-          width: 35%;
+          width: 40%;
           float: left;
           border-radius: 20px;
           box-shadow: 0 0 5px lightgrey;
+          border: 2px solid white;
           margin-top: 50px;
-          height: 30px;
+          height: 40px;
           font-size: 15px;
-          padding-top: 5px;
+          padding-top: 10px;
+          transition:1s ease-out;
+
+          &:hover {
+            background-color:white;
+            border: 1px solid $seafoam;
+            opacity: 0.8;
+            transition: 1s ease-out;
+            left: 0;
+          }
         }
 
         #sort-by {
           width: 35%;
           float: right;
           padding-top: 1px;
+        }
+
+        .sort-icon {
+          margin-left: 5px;
+          margin-right: 7px;
+
+          &:hover {
+
+          }
         }
     }
 
@@ -241,8 +205,8 @@ Button {
       justify-content: center;
 
       img {
-        margin: 15px;
-        width: 185px;
+        margin:11px;
+        width: 190px;
         height: 280px;
         box-shadow: $all;
 
@@ -281,69 +245,7 @@ Button {
         width: 180px;
       }
 
-/*MODAL*/
-.modal-body {
-  display: flex;
-  box-shadow: $all;
-  font-weight: $light;
 
-  .modal-text {
-    padding-left: 66px;
-    padding-right: 60px;
-    text-align: center;
-  }
-
-  .qty-picker {
-    margin-left: 30px;
-    margin-right: 1px;
-  }
-
-  div {
-    flex: 1;
-    background-color: white;
-  }
-}
-
-/*INCREMENTER*/
-
-.product-quantity {
-    border: 0;
-    outline: none;
-    cursor: pointer;
-    font-weight: 400;
-    text-align: center;
-    font-size: 2rem;
-    padding: 0 1rem;
-    border-radius: 10px;
-    margin-left: 75px;
-
-    button {
-      width: 70px;
-      border-radius: 5px;
-      float: left;
-    }
-
-    #counter {
-      float: left;
-      padding: 5px;
-    } 
-
-    #controls {
-      margin: 0 auto;
-      margin: 30px 10px 0 -40px;
-    }
-
-    .quantity {
-      width: 80%;
-      padding: 10px;
-    }
-}
-
-.add-cart-btn {
-  width: 220px;
-  margin-top: 20px;
-  margin-left: 20px;
-}
 
 #approval { 
   font-size: 12px;
@@ -392,4 +294,6 @@ Button {
       margin-left:40px;
     }
   }
-}  
+} 
+
+

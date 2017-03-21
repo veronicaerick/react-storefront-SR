@@ -1,0 +1,262 @@
+/*MODAL*/
+.modal-body {
+  display: flex;
+  box-shadow: $all;
+  font-weight: $light;
+  color: $navy;
+
+  .modal-text {
+    padding-left: 66px;
+    padding-right: 60px;
+    text-align: center;
+  }
+
+  .qty-picker {
+    margin-left: 30px;
+    margin-right: 1px;
+  }
+
+  div {
+    flex: 1;
+    background-color: white;
+  }
+}
+
+/*INCREMENTER*/
+
+.product-quantity {
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    font-weight: 400;
+    text-align: center;
+    font-size: 2rem;
+    padding: 0 1rem;
+    border-radius: 10px;
+    margin-left: 75px;
+
+    button {
+      width: 70px;
+      border-radius: 5px;
+      float: left;
+    }
+
+    #counter {
+      float: left;
+      padding: 5px;
+    } 
+
+    #controls {
+      margin: 0 auto;
+      margin: 30px 10px 0 -40px;
+    }
+
+    .quantity {
+      width: 80%;
+      padding: 10px;
+    }
+}
+
+.add-cart-btn {
+  width: 220px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+
+
+/* HTML Modal for Cart/ account/messages/orders */
+#modal-container {
+  position:fixed;
+  display:table;
+  height:100%;
+  width:100%;
+  top:0;
+  left:0;
+  transform:scale(0);
+  z-index:1;
+  
+  &.modal-select {
+    transform:scale(1);
+    .modal-background {
+      background:rgba(0,0,0,.0);
+      animation: fadeIn .8s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+      .modal {
+        height:75px;
+        width:75px;
+        border-radius:75px;
+        overflow:hidden;
+        animation: slideIn 1.5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+        h2,p {
+          opacity:0;
+          position:relative;
+          animation: modalContentFadeIn .5s 1.4s linear forwards;
+        }
+      }
+    }
+    &.out {
+      animation: slowFade .5s 1.5s linear forwards;
+      .modal-background {
+        background-color:rgba(0,0,0,.7);
+        animation: fadeToOut 2s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+        .modal {
+          border-radius:3px;
+          height:162px;
+          width:227px;
+          animation: floatShot 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+          h2,p {
+            animation:modalContentFadeOut .5s .5 cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+          }
+        }
+      }
+    }
+  }
+  .modal-background {
+    display:table-cell;
+    background:rgba(0,0,0,.4);
+    text-align:center;
+    vertical-align:middle;
+    .modal {
+      background:white;
+      padding:50px;
+      display:inline-block;
+      border-radius:3px;
+      font-weight:300;
+      position:relative;
+      h2 {
+        font-size:25px;
+        line-height:25px;
+        margin-bottom:15px;
+      }
+      p {
+        font-size:18px;
+        line-height:22px;
+      }
+      .modal-svg {
+        position:absolute;
+        top:0;
+        left:0;
+        height:100%;
+        width:100%;
+        border-radius:3px;
+        rect {
+          stroke: #fff;
+          stroke-width: 2px;
+          stroke-dasharray: 778;
+          stroke-dashoffset: 778;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  min-height:100%;
+  height:100%;
+  z-index:0;
+  padding-top: 15px;
+  .button {
+    display:inline-block;
+    text-align:center;
+    font-size:18px;
+    float: right;
+    cursor:pointer;
+    &:hover {
+      color:white;
+    }
+  } 
+}
+
+/* OVERLAY FOR PRODUCTS */
+.container{
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  margin: 0;
+  width: 200px;
+  height: 300px;
+  margin-right: 20px;
+  cursor: pointer;
+  
+  &:hover .overlay{
+    background:#AFDBCF;
+    transition: scale(1);
+  }
+  
+  &:hover span{
+   opacity: 1;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid $seafoam;
+    color: $seafoam;
+    padding-top: 10px;
+    padding-left: 15px;
+    border-radius: 10px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: transform .5s ease, opacity 1.3s ease;
+    transition: transform .5s ease, opacity 1.3s ease;
+  }
+  
+  .overlay{
+    margin: auto;
+    width: 0px;
+    height: 0px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: .6s ease-in;
+    transition: .6s ease-in;
+    
+  }
+
+  span {
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px !important;
+    position: absolute;
+    margin: auto;
+    width: 110px;
+    height: 60px;
+    top: 30%;
+    left: 33%;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: transform .5s ease, opacity .7s ease;
+    transition: transform .5s ease, opacity .7s ease;
+  }
+}
+
+.container{
+  &:hover .overlay-blue{
+    background:#A3C3DE;
+    transition: scale(1);
+  }
+  
+  &:hover .blue-span{
+   opacity: 1;
+    background-color: white;
+    border-radius: 15px;
+    border: 2px solid #254E70;
+    color: #254E70;
+    padding-top: 10px;
+    padding-left: 15px;
+    border-radius: 10px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: transform .5s ease, opacity 1.3s ease;
+    transition: transform .5s ease, opacity 1.3s ease;
+  }
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+
+
+

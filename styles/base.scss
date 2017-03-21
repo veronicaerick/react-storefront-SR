@@ -1,0 +1,86 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+$main: 'Work Sans', sans-serif;
+$title: 'Billabong', Helvetica;
+$light: lighter;
+
+/* COLORS */
+$beige:#FAF9F5;
+$navy: #254E70;
+$teal: #267BA5;
+$seafoam: #4FC9A5;
+$red: #C33C54;
+$green: #3DB260;
+$grey: lightgrey;
+$lightblue: #6BEDFF;
+
+/*SPACING*/
+$standard: 12px;
+
+/* SHADOWING */
+$all: 0 0 5px $grey;
+$lower: 1px 2.5px 1px #DDDBD7;
+
+/*Housekeeping/ OVERRIDDING SCSS*/
+html,body {
+  background-size:cover;
+  background-position:top center;
+  background-color: #FBF9F8;
+  font-family: $main;
+}
+
+body {
+  background-color: #FBF9F8;
+  font-family: $main;
+}
+
+small {
+  display: inherit;
+}
+
+html a{
+  cursor: pointer;
+  color: $teal;
+
+  &:hover {
+    color: #4AA6B2;
+  }
+}
+
+figcaption {
+  padding: 5px;
+}
+
+hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $grey;
+    margin: 1em 0;
+    padding: 0; 
+    width: 100%;
+}
+
+.long-divider {
+  border-top:2px solid $grey;
+  width: 815px;
+  margin-left: -155px;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+i {
+  margin-left: 12px;
+  display: inline-block;
+}
+
+.popover-title, .popover-content {
+    color: $navy;
+    text-align: center;
+}
+
+.popover.top>.arrow {
+    display: none;
+}

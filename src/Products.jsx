@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
-import { Button } from 'react-bootstrap';
+import { Tooltip, OverlayTrigger, Button, Popover, ButtonToolbar } from 'react-bootstrap'
 import ProductDetailModal from './ProductDetailModal.jsx';
+
+const popoverTop = (
+  <Popover id="popover-positioned-top" title="Better browsing tip">
+    <strong>Sort by type:</strong> Click on an icon to sort products by category.
+  </Popover>
+);
 
 const Products = React.createClass ({
   getInitialState() {
@@ -9,14 +15,17 @@ const Products = React.createClass ({
 
    renderImage(imageUrl) {
       return (
-        <div key={imageUrl.id}>
-          <img src={imageUrl.url} />
+        <div className="container" key={imageUrl.id}>
+          <img className="overlay" src={imageUrl.url} />
+              <span> see details<i className="fa fa-eye" aria-hidden="true"></i>
+              </span>
         </div>
       );
     },
 
     render() {
     let lgClose = () => this.setState({ lgShow: false });
+
     return (
           <div className="gallery">
           <div className="products-header">
@@ -27,7 +36,12 @@ const Products = React.createClass ({
                   search products <i aria-hidden="true" className="fa fa-search"></i>
                 </div>
                 <div className="search-products" id="sort-by">
-                  sort-by <a><img src="/static/images/sort-by-icons.png" width="140"></img></a>
+                  sort-by <a>   
+                  <OverlayTrigger trigger="click" placement="top" overlay={popoverTop}>
+                    <img className="sort-icon float arrow" id="teach" src="/static/images/green.png" width="37"></img>
+                  </OverlayTrigger>
+                  <img className="sort-icon float" src="/static/images/pill.png" width="37"></img>
+                  <img className="sort-icon float"src="/static/images/amph.png" width="37"></img></a>
                 </div>
               </div>
             </div>
@@ -41,7 +55,7 @@ const Products = React.createClass ({
           </div>
           </div>
           <div id="see-more-btn">
-            <Button value="True" id="status"><span>Show all products</span></Button>
+            <Button className="button" value="True" id="status"><span>Show all products</span></Button>
           </div>      
           <ProductDetailModal show={this.state.lgShow} onHide={lgClose} />
         </div>
@@ -53,11 +67,17 @@ const Products = React.createClass ({
 export default Products;
 
 // show more/less products
+
+// remove bounce animation after user has hovered
 $(document).ready(
     () => {
         $("#status").click(function() {
             $(".more-products").toggle();
             ($(this).text() === 'Show all products') ? ($(this).text('Show less')) :  ($(this).text('Show all products'))
         });
-      });
+        $("#teach").hover(function() {
+            $(this).addClass('hover')
+            $(this).removeClass('arrow');
+        });
 
+      });

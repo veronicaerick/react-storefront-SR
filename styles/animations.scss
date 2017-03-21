@@ -1,0 +1,226 @@
+
+/* Grow */
+.grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.grow:hover, .grow:focus, .grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/* FLOAT for title*/
+.float {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.float:hover, .float:focus, .float:active {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+  background-color: white;
+  border-radius: 50px;
+}
+
+/* SEND MAIL ANIMATION/ LIKE STORE */
+.plane, .heart {
+  position: absolute;
+  right: 18px;
+  display: inline-block;
+}
+.fa-check,
+.fade, .fa-heart {
+  animation: fade 3s;
+  animation-fill-mode: forwards;
+}
+
+.fa-heart:before {
+  color: $red !important;
+}
+
+.hidden-heart {
+  color: red;
+}
+
+.hidden-plane, .hidden-heart {
+  display: none;
+}
+.visible {
+  display: inline;
+}
+
+.fly {
+  position: absolute;
+  animation-name: a;
+  animation-duration: 5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-delay: 1;
+}
+.done {
+  background-color: $teal;
+  &:hover {
+    background-color: $teal;
+  }
+}
+@keyframes fade {
+  0% {
+    color: transparent;
+ }
+  100% {
+    color: #fff;
+ }
+}
+@keyframes a {
+  0% {
+    top: 10px;
+    left: 80px;
+ }
+ 4% {
+    transform: rotate(0deg);
+ }
+  100% {
+    top: -10000px;
+    left: 10000px;
+    transform: rotate(13360deg);
+ }
+}
+
+/* HTML MODAL animation for cart*/
+
+@keyframes fadeIn {
+  0% {
+    background:rgba(0,0,0,.0);
+  }
+  100% {
+    background:rgba(0,0,0,.7);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    background:rgba(0,0,0,.7);
+  }
+  100% {
+    background:rgba(0,0,0,.0);
+  }
+}
+
+
+
+@keyframes modalFadeIn {
+  0% {
+    background-color:transparent;
+  }
+  100% {
+    background-color:white;
+  }
+}
+
+@keyframes modalFadeOut {
+  0% {
+    background-color:white;
+  }
+  100% {
+    background-color:transparent;
+  }
+}
+
+@keyframes modalContentFadeIn {
+  0% {
+    opacity:0;
+    top:-20px;
+  }
+  100% {
+    opacity:1;
+    top:0;
+  }
+}
+
+@keyframes modalContentFadeOut {
+  0% {
+    opacity:1;
+    top:0px;
+  }
+  100% {
+    opacity:0;
+    top:-20px;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform:translateX(1000px);
+  }
+  80% {
+    transform:translateX(0px);
+    border-radius:75px;
+    height:75px;
+    width:75px;
+  }
+  90% {
+    border-radius:3px;
+    height:182px;
+    width:247px;
+  }
+  100% {
+    border-radius:3px;
+    height:400px;
+    width:370px;
+  }
+}
+
+@keyframes floatShot {
+  0% {
+    transform:translateY(0) rotate(0deg);
+    opacity:1;
+  }
+  100% {
+    transform:translateY(300px) rotate(45deg);
+    opacity:0;
+  }
+}
+
+@keyframes fadeToOut {
+  0% {
+    box-shadow:inset 0 0 0 rgba(0,0,0,.0);
+  }
+  100% {
+    box-shadow:inset 0 2000px 0 rgba(0,0,0,.0);
+  }
+}
+
+@keyframes slowFade {
+  0% {
+    opacity:1;
+  }
+  99.9% {
+    opacity:0;
+    transform:scale(1);
+  }
+  100% {
+    transform:scale(0);
+  }
+}
+
+.arrow {
+  -webkit-animation: bounce 1.9s ease infinite;
+  -moz-animation: bounce 1.9s ease infinite;
+  animation: bounce 1.9s ease infinite;
+}
+

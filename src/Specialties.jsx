@@ -9,14 +9,6 @@ const Specialties = React.createClass({
     return { smShow: false, lgShow: false };
     },
 
-    renderImage(imageUrl) {
-      return (
-        <div key={imageUrl.id}>
-          <img src={imageUrl.url} />
-        </div>
-      );
-    },
-
     render() {
     let lgClose = () => this.setState({ lgShow: false });
     
@@ -24,7 +16,23 @@ const Specialties = React.createClass({
       <div className="gallery">
       <h2 className="products-header">Specials</h2>
         <div className="products" onClick={()=>this.setState({ lgShow: true })}>
-            {this.props.imageUrls.map(imageUrl => this.renderImage(imageUrl))}
+          <div className="container">
+                <img className="overlay" src="/static/images/green-code4.png"></img>
+                 <span>see details <i className="fa fa-eye" aria-hidden="true"></i>
+                </span>
+            </div>
+            <div className="container">
+                <img className="overlay" src="/static/images/green-code2.png"></img>
+                 <span>see details <i className="fa fa-eye" aria-hidden="true"></i></span>
+            </div>
+            <div className="container">
+                <img className="overlay-blue" src="/static/images/blue-code.png"></img>
+                 <span className="blue-span">see details <i className="fa fa-eye" aria-hidden="true"></i></span>
+            </div>
+            <div className="container">
+                <img className="overlay" src="/static/images/green-code5.png"></img>
+                 <span>see details <i className="fa fa-eye" aria-hidden="true"></i></span>
+            </div>
         </div>
           <ProductDetailModal show={this.state.lgShow} onHide={lgClose} />
       </div>

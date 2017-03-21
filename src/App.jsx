@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import Store from './Store.jsx';
 import SellerProfile from './SellerProfile.jsx';
 import Specialties from './Specialties.jsx';
-import Navbar from './Navbar.jsx'
 import About from './About.jsx'
 import Products from './Products.jsx';
 
@@ -28,7 +27,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <Store />
         <SellerProfile />
         <Specialties imageUrls={urlsSp}/>

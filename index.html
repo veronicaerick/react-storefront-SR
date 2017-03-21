@@ -1,22 +1,118 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>SILK ROAD</title>
-    <!-- BOOTSTRAP CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
-    <link rel="shortcut icon" href="/static/images/logo.png" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-     <script src="https://use.fontawesome.com/eb63589882.js"></script>
+  <meta charset="UTF-8">
+  <title>IG</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/static/images/logo.png" rel="shortcut icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+  </script>
+  <script src="https://use.fontawesome.com/eb63589882.js">
+  </script>
 </head>
 <body>
-  <div id="nav"></div>
+  <div>
+    <ul class="nav">
+      <li style="list-style: none"><img id="silk-road" src="/static/images/silk_road.png"></li>
+      <li class="nav-btn">
+      <!--  Messages -->
+        <div id="modal-container">
+          <div class="modal-background">
+            <div class="modal">
+              <h2>New Messages: 0</h2>
+              <img src="/static/images/sample-msgs.png" width="260"><br>
+              <button class="button">See All Messages 
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+              </button>
+              <button class="button-close">Close</button>
+              <svg class="modal-svg" height="100%" preserveaspectratio="none" width="100%">
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="buttons">
+            <div class="button" id="modal-select"><img class="nav-items" src="/static/images/messages.png"></div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-btn">
+      <!--  Account -->
+        <div id="modal-container">
+          <div class="modal-background">
+            <div class="modal">
+              <h2>Account</h2>
+              <p>You have one order processing</p>
+              <button className="button-close">Close</button>
+              <svg class="modal-svg" height="100%" preserveaspectratio="none" width="100%">
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="buttons">
+            <div class="button"><img class="nav-items" src="/static/images/account.png"></div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-btn">
+      <!--  Orders -->
+        <div id="modal-container">
+          <div class="modal-background">
+            <div class="modal">
+              <h2>You have one order processing</h2>
+              <p>You have 0 new messages and 15 old messages.</p>
+              <button className="button-close">Close</button>
+              <svg class="modal-svg" height="100%" preserveaspectratio="none" width="100%">
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="buttons">
+            <div class="button"><img class="nav-items" src="/static/images/orders.png"></div>
+          </div>
+        </div>
+      </li>
+      <!--  Cart -->
+      <li class="nav-btn" id="cart">
+        <div id="modal-container">
+          <div class="modal-background">
+            <div class="modal">
+              <h2>No items in your cart</h2>
+              <p>Add an item to checkout</p>
+              <button className="button-close">Close</button>
+              <svg class="modal-svg" height="100%" preserveaspectratio="none" width="100%">
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="content">
+          <div class="buttons">
+            <div class="button"><img id="cart" src="/static/images/cart.png" width="80"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
   <div id="react-root"></div>
   <div id="react-gallery"></div>
-  <script src="/build/bundle.js"></script>
-  <script type="text/javascript"></script>
-  <script type="text/javascript">
-  </script>
+  <div id="modal-container">
+    <script src="/build/bundle.js"></script> 
+    <script>
+    // Modal for Nav
+    $('.button').click(function(){
+      var buttonId = $(this).attr('id');
+      $('#modal-container').removeAttr('class').addClass(buttonId);
+      $('body').addClass('modal-active');
+    });
 
+    $('#modal-container').click(function(){
+      $(this).addClass('out');
+      $('body').removeClass('modal-active');
+    });
+    </script> 
+  </div>
 </body>
 </html>
